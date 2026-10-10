@@ -12,9 +12,9 @@ import { OurCoffee } from './components/OurCoffee';
 import { AboutSection } from './components/AboutSection';
 import { GalleryStrip } from './components/GalleryStrip';
 import { EventsSection } from './components/EventsSection';
-import { TestimonialsSection } from './components/TestimonialsSection';
 import { FindUsSection } from './components/FindUsSection';
 import { DailyQuizSection } from './components/DailyQuizSection';
+import { QuizLeaderboardSection } from './components/QuizLeaderboardSection';
 import { WeeklyCompetitionSection } from './components/WeeklyCompetitionSection';
 import { Footer } from './components/Footer';
 import { OrganicDivider } from './components/OrganicDivider';
@@ -310,6 +310,12 @@ export default function App() {
           onOpenLoyalty={openLoyaltyCardModal}
         />
 
+        {/* 8B-2. Daily Quiz Leaderboard */}
+        <QuizLeaderboardSection
+          onOpenCustomerAuth={handleOpenLoyaltyFromNotification}
+          onOpenLoyalty={openLoyaltyCardModal}
+        />
+
         {/* 8C. Weekly Competition & Community Rewards */}
         <WeeklyCompetitionSection
           onOpenCustomerAuth={handleOpenLoyaltyFromNotification}
@@ -317,13 +323,10 @@ export default function App() {
           onOpenOrderModal={() => setOrderModalOpen(true)}
         />
 
-        {/* Organic Crest between Gatherings & Testimonials */}
+        {/* Organic Crest Divider */}
         <OrganicDivider variant="crest" fromBg="#faf6ef" toBg="#faf6ef" />
 
-        {/* 9. Testimonials (4.4 Google Reviews) */}
-        <TestimonialsSection />
-
-        {/* 10. Find Us in Miliana */}
+        {/* 9. Find Us in Miliana */}
         <FindUsSection onOpenDirections={() => setDirectionsModalOpen(true)} />
       </main>
 

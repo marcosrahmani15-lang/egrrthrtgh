@@ -11,7 +11,7 @@ import baristaImg from '../assets/images/regenerated_image_1790385503773.png';
 import cafeCornerImg from '../assets/images/regenerated_image_1790337393107.jpg';
 import founderImg from '../assets/images/regenerated_image_1790336683505.png';
 
-import { MenuItem, CoffeeBean, Testimonial } from '../types/coffee';
+import { MenuItem, CoffeeBean } from '../types/coffee';
 
 export const logoImage = defaultLogoAsset;
 
@@ -268,9 +268,6 @@ export const FULL_MENU_ITEMS: MenuItem[] = [
     image: oreoCheesecakeImg,
   },
 ];
-
-// Deprecated in Part 6: Live Google Reviews are now fetched dynamically via Google Places API (New) in TestimonialsSection.tsx
-export const TESTIMONIALS: Testimonial[] = [];
 
 export const GALLERY_ITEMS = [
   {

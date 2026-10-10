@@ -14,7 +14,7 @@ import {
 } from '../types/coffee';
 import { getAllOfficialProducts } from '../data/officialMenuData';
 import { TodaySpecialItem } from '../types/specials';
-import { DailyQuiz, QuizAttempt } from '../types/quiz';
+import { DailyQuiz, QuizAttempt, QuizLeaderboardData } from '../types/quiz';
 import { WeeklyCompetition } from '../types/competitions';
 
 const API_BASE = '/api/loyalty';
@@ -1451,7 +1451,7 @@ export const fetchTodayQuizFromBackend = async (): Promise<{
   todayKey?: string;
   message?: string;
 }> => {
-  const token = getStoredSessionToken('CUSTOMER');
+  const token = getSessionToken('CUSTOMER');
   const headers: Record<string, string> = {};
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;
@@ -1470,6 +1470,7 @@ export const fetchTodayQuizFromBackend = async (): Promise<{
 export const submitQuizAnswersToBackend = async (
   quizId: string,
   answers: number[],
+  options?: { timeTakenSeconds?: number; timedOut?: boolean },
 ): Promise<{
   success: boolean;
   score: number;
@@ -1483,10 +1484,38 @@ export const submitQuizAnswersToBackend = async (
     '/api/quiz/submit',
     {
       method: 'POST',
-      body: JSON.stringify({ quizId, answers }),
+      body: JSON.stringify({
+        quizId,
+        answers,
+        timeTakenSeconds: options?.timeTakenSeconds,
+        timedOut: options?.timedOut,
+      }),
     },
     'CUSTOMER',
   );
+};
+
+export const fetchQuizLeaderboardFromBackend = async (
+  quizId?: string,
+): Promise<{
+  success: boolean;
+  data: QuizLeaderboardData;
+}> => {
+  const token = getSessionToken('CUSTOMER');
+  const headers: Record<string, string> = {};
+  if (token) {
+    headers['Authorization'] = `Bearer ${token}`;
+    headers['x-venty-session-token'] = token;
+  }
+  const query = quizId ? `?quizId=${encodeURIComponent(quizId)}` : '';
+  const res = await fetch(`/api/quiz/leaderboard${query}`, {
+    headers,
+    credentials: 'omit',
+  });
+  if (!res.ok) {
+    throw new Error('Failed to fetch quiz leaderboard');
+  }
+  return res.json();
 };
 
 export const fetchManagementQuizzesFromBackend = async (
@@ -1545,7 +1574,7 @@ export const fetchCurrentCompetitionFromBackend = async (): Promise<{
   isParticipating: boolean;
   todayKey?: string;
 }> => {
-  const token = getStoredSessionToken('CUSTOMER');
+  const token = getSessionToken('CUSTOMER');
   const headers: Record<string, string> = {};
   if (token) {
     headers['Authorization'] = `Bearer ${token}`;

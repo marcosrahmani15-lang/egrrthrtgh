@@ -551,6 +551,8 @@ export const ManagementPortal: React.FC<ManagementPortalProps> = ({
     customers: { group: 'OPERATIONS', title: 'Customers' },
     menu: { group: 'BUSINESS', title: 'Menu' },
     specials: { group: 'BUSINESS', title: "Today's Specials" },
+    quizzes: { group: 'ENGAGEMENT', title: 'Daily Quizzes' },
+    competitions: { group: 'ENGAGEMENT', title: 'Weekly Competitions' },
     loyalty: { group: 'BUSINESS', title: 'Loyalty' },
     rewards: { group: 'BUSINESS', title: 'Rewards' },
     reviews: { group: 'BUSINESS', title: 'Reviews' },

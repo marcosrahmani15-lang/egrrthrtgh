@@ -147,8 +147,8 @@
       "passwordHash": "$2b$10$GUQC.4xYF5se6SMpTq3o4eTm2bgphfUfrinkGWN5COKA3AvTcD7d.",
       "email": "yacine@example.com",
       "favouriteDrink": "Spanish Latte",
-      "currentStampCount": 2,
-      "lifetimeStamps": 2,
+      "currentStampCount": 3,
+      "lifetimeStamps": 3,
       "welcomeBonusGranted": true,
       "createdAt": "2026-09-27T15:00:05.951Z",
       "updatedAt": "2026-09-27T15:00:05.951Z",
@@ -488,9 +488,51 @@
       "loyaltyStatus": "Active",
       "availableRewards": [],
       "redeemedRewards": []
+    },
+    {
+      "customerId": "VENTY-8178",
+      "name": "Timeout Tester",
+      "phone": "0555332211",
+      "favouriteDrink": "Iced Specialty Latte",
+      "currentStampCount": 2,
+      "lifetimeStamps": 2,
+      "welcomeBonusGranted": true,
+      "createdAt": "2026-10-10T08:50:48.453Z",
+      "updatedAt": "2026-10-10T08:50:48.453Z",
+      "loyaltyStatus": "Active",
+      "availableRewards": [],
+      "redeemedRewards": []
     }
   ],
   "transactions": [
+    {
+      "id": "LTX-MV25MMF9",
+      "customerId": "VENTY-8178",
+      "customerName": "Timeout Tester",
+      "type": "WELCOME_BONUS",
+      "stampsDelta": 2,
+      "timestamp": "2026-10-10T08:50:48.453Z",
+      "source": "SIGNUP_BONUS",
+      "status": "CONFIRMED",
+      "idempotencyKey": "signup_bonus_VENTY-8178_0555332211",
+      "note": "Welcome Bonus: +2 Free Stamps on Account Signup",
+      "previousValue": 0,
+      "newValue": 2
+    },
+    {
+      "id": "LTX-QUIZ-MV25MC64",
+      "customerId": "VENTY-3358",
+      "customerName": "Yacine Test",
+      "type": "ADMIN_ADJUSTMENT",
+      "stampsDelta": 1,
+      "source": "SYSTEM",
+      "status": "CONFIRMED",
+      "idempotencyKey": "quiz_quiz-coffee-origins-01_VENTY-3358",
+      "note": "Daily Quiz Winner (Specialty Coffee & Extraction Mastery): +1 Bonus Stamp",
+      "previousValue": 2,
+      "newValue": 3,
+      "timestamp": "2026-10-10T08:50:35.164Z"
+    },
     {
       "id": "LTX-MV0TS7PD",
       "customerId": "VENTY-7249",
@@ -7445,6 +7487,153 @@
       "perkText": "+2 Bonus Loyalty Stamps included",
       "featured": true,
       "createdAt": "2026-10-01T10:00:00.000Z",
+      "updatedAt": "2026-10-09T10:00:00.000Z"
+    }
+  ],
+  "dailyQuizzes": [
+    {
+      "id": "quiz-coffee-origins-01",
+      "title": "Specialty Coffee & Extraction Mastery",
+      "description": "Test your palate and coffee knowledge with our daily 3-question challenge. Earn +1 Bonus Loyalty Stamp on a perfect score!",
+      "dateKey": "2026-10-10",
+      "scheduledStartDate": null,
+      "scheduledEndDate": null,
+      "isActive": true,
+      "rewardType": "STAMPS",
+      "rewardValue": 1,
+      "rewardDescription": "+1 Bonus Loyalty Stamp",
+      "timeLimitSeconds": 120,
+      "questions": [
+        {
+          "id": "q1",
+          "question": "What is the primary flavor profile of high-altitude washed Ethiopian Yirgacheffe coffee?",
+          "options": [
+            "Floral bergamot, delicate jasmine, and bright lemon citrus",
+            "Heavy smokey dark chocolate and burnt ash",
+            "Earthy cedarwood and medicinal cloves",
+            "Salty butter and artificial vanilla"
+          ],
+          "correctOptionIndex": 0,
+          "explanation": "Ethiopian Yirgacheffe coffees are celebrated for high-elevation terroir producing vivid florals (jasmine) and crystalline citrus notes."
+        },
+        {
+          "id": "q2",
+          "question": "What is the standard ideal water brewing temperature for specialty pour-over (V60)?",
+          "options": [
+            "70°C – 75°C (Warm lukewarm)",
+            "90°C – 94°C (Off-boil specialty standard)",
+            "100°C – 105°C (Violent boiling)",
+            "50°C – 60°C (Tap warm)"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Water between 90°C and 94°C extracts delicate sweetness and organic acids without extracting bitter astringent polyphenols."
+        },
+        {
+          "id": "q3",
+          "question": "What distinguishes a traditional Cortado from a Flat White?",
+          "options": [
+            "Cortado is served cold with crushed ice and sweetened syrup",
+            "Cortado is a 1:1 ratio of espresso to warm steamed milk with little foam; Flat White is larger with microfoam",
+            "Cortado is brewed exclusively using Robusta beans in a French press",
+            "Cortado contains whipped heavy dairy cream and chocolate shavings"
+          ],
+          "correctOptionIndex": 1,
+          "explanation": "Originating in Spain, the Cortado cuts equal parts espresso with warm milk to reduce acidity while maintaining concentrated coffee intensity."
+        }
+      ],
+      "createdAt": "2026-10-01T10:00:00.000Z",
+      "updatedAt": "2026-10-09T10:00:00.000Z"
+    }
+  ],
+  "quizAttempts": [
+    {
+      "id": "ATTEMPT-MV25MMFG-T09T",
+      "quizId": "quiz-coffee-origins-01",
+      "customerId": "VENTY-8178",
+      "customerName": "Timeout Tester",
+      "customerPhone": "0555332211",
+      "answers": [
+        0,
+        -1,
+        -1
+      ],
+      "score": 1,
+      "totalQuestions": 3,
+      "isPerfectScore": false,
+      "timeTakenSeconds": 120,
+      "timedOut": true,
+      "rewardIssued": null,
+      "completedAt": "2026-10-10T08:50:48.460Z"
+    },
+    {
+      "id": "ATTEMPT-MV25MC64-11SR",
+      "quizId": "quiz-coffee-origins-01",
+      "customerId": "VENTY-3358",
+      "customerName": "Yacine Test",
+      "customerPhone": "0555998877",
+      "answers": [
+        0,
+        1,
+        1
+      ],
+      "score": 3,
+      "totalQuestions": 3,
+      "isPerfectScore": true,
+      "timeTakenSeconds": 52,
+      "timedOut": false,
+      "rewardIssued": {
+        "type": "LOYALTY_STAMPS",
+        "stampsAwarded": 1,
+        "newTotalStamps": 3,
+        "description": "+1 Bonus Loyalty Stamp awarded directly to your card!"
+      },
+      "completedAt": "2026-10-10T08:50:35.165Z"
+    }
+  ],
+  "competitions": [
+    {
+      "id": "comp-miliana-autumn-cup",
+      "title": "Miliana Coffee Lovers Weekly Cup & Rewards",
+      "description": "Join this week’s community competition! All active customers placing pickup orders or earning loyalty stamps this week are eligible to win artisan rewards.",
+      "weekNumber": 41,
+      "year": 2026,
+      "startDate": "2026-10-05",
+      "endDate": "2026-10-12",
+      "isActive": true,
+      "isDrawn": false,
+      "drawnAt": null,
+      "eligibilityRule": "ALL_CUSTOMERS",
+      "winnerSelectionRule": "RANDOM_DRAW",
+      "prizes": [
+        {
+          "id": "prz-1",
+          "title": "1st Place: Free Specialty Drink & Whole Bean Bag (250g)",
+          "description": "Choice of any signature drink on the menu plus our freshly roasted single-origin bean bag.",
+          "type": "FREE_DRINK",
+          "bonusStamps": 7,
+          "quantity": 1
+        },
+        {
+          "id": "prz-2",
+          "title": "2nd Place: Artisanal Basque Burnt Cheesecake & Drink",
+          "description": "Freshly baked Basque cheesecake slice with any hot or iced latte.",
+          "type": "FREE_DESSERT",
+          "bonusStamps": 4,
+          "quantity": 2
+        },
+        {
+          "id": "prz-3",
+          "title": "3rd Place: 20% Off Weekend Order Coupon",
+          "description": "20% discount on your next online order tray at VENTY THE COFFEE.",
+          "type": "DISCOUNT_COUPON",
+          "discountPercentage": 20,
+          "quantity": 5
+        }
+      ],
+      "participants": [],
+      "winners": [],
+      "bannerImage": "/src/assets/images/venty_coffee_moments_1790355076056.jpg",
+      "createdAt": "2026-10-05T00:00:00.000Z",
       "updatedAt": "2026-10-09T10:00:00.000Z"
     }
   ]

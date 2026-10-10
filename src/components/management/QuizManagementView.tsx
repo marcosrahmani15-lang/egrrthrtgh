@@ -43,6 +43,7 @@ export const QuizManagementView: React.FC<QuizManagementViewProps> = ({
   const [formTitle, setFormTitle] = useState('');
   const [formDescription, setFormDescription] = useState('');
   const [formDateKey, setFormDateKey] = useState('');
+  const [formTimeLimitSeconds, setFormTimeLimitSeconds] = useState<number>(120);
   const [formRewardType, setFormRewardType] = useState<'STAMPS' | 'POINTS' | 'DISCOUNT_COUPON'>('STAMPS');
   const [formRewardValue, setFormRewardValue] = useState<number>(1);
   const [formRewardDescription, setFormRewardDescription] = useState('+1 Bonus Loyalty Stamp');
@@ -70,6 +71,7 @@ export const QuizManagementView: React.FC<QuizManagementViewProps> = ({
     setFormTitle('');
     setFormDescription('Test your palate and coffee knowledge with our daily palate challenge.');
     setFormDateKey(new Date().toLocaleDateString('en-CA'));
+    setFormTimeLimitSeconds(120);
     setFormRewardType('STAMPS');
     setFormRewardValue(1);
     setFormRewardDescription('+1 Bonus Loyalty Stamp');
@@ -91,6 +93,7 @@ export const QuizManagementView: React.FC<QuizManagementViewProps> = ({
     setFormTitle(q.title);
     setFormDescription(q.description || '');
     setFormDateKey(q.dateKey);
+    setFormTimeLimitSeconds(q.timeLimitSeconds || 120);
     setFormRewardType((q.rewardType as any) || 'STAMPS');
     setFormRewardValue(q.rewardValue || 1);
     setFormRewardDescription(q.rewardDescription || '+1 Bonus Loyalty Stamp');
@@ -153,6 +156,7 @@ export const QuizManagementView: React.FC<QuizManagementViewProps> = ({
         title: formTitle.trim(),
         description: formDescription.trim(),
         dateKey: formDateKey,
+        timeLimitSeconds: Number(formTimeLimitSeconds) > 0 ? Number(formTimeLimitSeconds) : 120,
         rewardType: formRewardType,
         rewardValue: Number(formRewardValue) || 1,
         rewardDescription: formRewardDescription.trim(),
@@ -246,11 +250,18 @@ export const QuizManagementView: React.FC<QuizManagementViewProps> = ({
 
               <p className="font-sans text-xs text-[#e8dcc8]/70 line-clamp-2 mb-3">{q.description}</p>
 
-              <div className="flex items-center gap-2 text-xs font-mono text-[#f4d19b] bg-[#351016]/40 p-2 rounded-xl border border-[#c9833a]/20">
-                <Award className="w-3.5 h-3.5 text-[#c9833a]" />
-                <span>{q.rewardDescription || `+${q.rewardValue} ${q.rewardType}`}</span>
+              <div className="flex items-center gap-2 text-xs font-mono text-[#f4d19b] bg-[#351016]/40 p-2 rounded-xl border border-[#c9833a]/20 flex-wrap">
+                <div className="flex items-center gap-1.5">
+                  <Award className="w-3.5 h-3.5 text-[#c9833a]" />
+                  <span>{q.rewardDescription || `+${q.rewardValue} ${q.rewardType}`}</span>
+                </div>
                 <span className="text-[#e8dcc8]/40">·</span>
                 <span>{q.questions.length} Questions</span>
+                <span className="text-[#e8dcc8]/40">·</span>
+                <div className="inline-flex items-center gap-1 text-[#f4d19b]">
+                  <Clock className="w-3 h-3 text-[#c9833a]" />
+                  <span>{q.timeLimitSeconds || 120}s (2-Min Timer)</span>
+                </div>
               </div>
             </div>
 
@@ -377,6 +388,49 @@ export const QuizManagementView: React.FC<QuizManagementViewProps> = ({
                     placeholder="+1 Bonus Loyalty Stamp"
                     className="w-full px-3.5 py-2.5 rounded-xl bg-[#14080a] border border-[#c9833a]/30 text-white text-xs focus:outline-none focus:border-[#c9833a]"
                   />
+                </div>
+              </div>
+
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                <div>
+                  <label className="block text-xs font-semibold text-[#f4d19b] mb-1 flex items-center justify-between">
+                    <span>Countdown Timer Window</span>
+                    <span className="font-mono text-[11px] text-[#c9833a]">
+                      {Math.floor(formTimeLimitSeconds / 60)}m {formTimeLimitSeconds % 60}s
+                    </span>
+                  </label>
+                  <div className="relative">
+                    <input
+                      type="number"
+                      min={30}
+                      max={600}
+                      step={15}
+                      value={formTimeLimitSeconds}
+                      onChange={(e) => setFormTimeLimitSeconds(Math.max(15, Number(e.target.value) || 120))}
+                      className="w-full px-3.5 py-2.5 rounded-xl bg-[#14080a] border border-[#c9833a]/30 text-white text-xs focus:outline-none focus:border-[#c9833a]"
+                    />
+                    <span className="absolute right-3 top-2.5 text-[11px] font-mono text-[#e8dcc8]/50">
+                      seconds (120s = 2 min)
+                    </span>
+                  </div>
+                  <span className="text-[10px] text-[#e8dcc8]/60 mt-1 block">
+                    Default: 120 seconds (2 minutes). Boosts customer urgency & engagement.
+                  </span>
+                </div>
+
+                <div>
+                  <label className="block text-xs font-semibold text-[#f4d19b] mb-1">
+                    Reward Type
+                  </label>
+                  <select
+                    value={formRewardType}
+                    onChange={(e) => setFormRewardType(e.target.value as any)}
+                    className="w-full px-3.5 py-2.5 rounded-xl bg-[#14080a] border border-[#c9833a]/30 text-white text-xs focus:outline-none focus:border-[#c9833a]"
+                  >
+                    <option value="STAMPS">Bonus Loyalty Stamps</option>
+                    <option value="DISCOUNT_COUPON">Free Drink / Reward Coupon</option>
+                    <option value="POINTS">Loyalty Points</option>
+                  </select>
                 </div>
               </div>
 

@@ -176,6 +176,7 @@ CREATE TABLE IF NOT EXISTS daily_quizzes (
   reward_type VARCHAR(32) NOT NULL DEFAULT 'STAMPS',
   reward_value NUMERIC(10, 2) NOT NULL DEFAULT 1,
   reward_description VARCHAR(255),
+  time_limit_seconds INT NOT NULL DEFAULT 120,
   questions JSONB NOT NULL DEFAULT '[]',
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
@@ -193,6 +194,8 @@ CREATE TABLE IF NOT EXISTS quiz_attempts (
   score INT NOT NULL DEFAULT 0,
   total_questions INT NOT NULL DEFAULT 0,
   is_perfect_score BOOLEAN NOT NULL DEFAULT FALSE,
+  time_taken_seconds INT,
+  timed_out BOOLEAN NOT NULL DEFAULT FALSE,
   reward_issued JSONB,
   completed_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   CONSTRAINT uq_customer_quiz UNIQUE(quiz_id, customer_id)

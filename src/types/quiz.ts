@@ -17,6 +17,7 @@ export interface DailyQuiz {
   rewardType: 'STAMPS' | 'POINTS' | 'DISCOUNT_COUPON' | 'NONE';
   rewardValue: number; // e.g. 1 stamp or 10% coupon
   rewardDescription?: string;
+  timeLimitSeconds?: number; // 2-minute window (default: 120 seconds)
   questions: QuizQuestion[];
   createdAt: string;
   updatedAt: string;
@@ -32,6 +33,8 @@ export interface QuizAttempt {
   score: number; // number of correct answers
   totalQuestions: number;
   isPerfectScore: boolean;
+  timeTakenSeconds?: number; // Time in seconds taken to complete the quiz
+  timedOut?: boolean; // True if quiz was auto-submitted due to 2-minute timer expiry
   rewardIssued?: {
     type: string;
     stampsAwarded?: number;
@@ -42,3 +45,27 @@ export interface QuizAttempt {
 }
 
 export type QuizStatus = 'ACTIVE' | 'SCHEDULED' | 'EXPIRED' | 'INACTIVE';
+
+export interface QuizLeaderboardEntry {
+  rank: number;
+  customerId: string;
+  customerDisplayName: string;
+  score: number;
+  totalQuestions: number;
+  accuracyPercent: number;
+  timeTakenSeconds: number;
+  speedFormatted: string;
+  isPerfectScore: boolean;
+  completedAt: string;
+  isCurrentUser?: boolean;
+}
+
+export interface QuizLeaderboardData {
+  quizId: string;
+  quizTitle: string;
+  dateKey: string;
+  timeLimitSeconds: number;
+  totalParticipants: number;
+  entries: QuizLeaderboardEntry[];
+  currentUserEntry?: QuizLeaderboardEntry | null;
+}

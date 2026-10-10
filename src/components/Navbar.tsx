@@ -225,6 +225,14 @@ export const Navbar: React.FC<NavbarProps> = ({
 
           <button
             type="button"
+            onClick={() => scrollTo('quiz-leaderboard')}
+            className="hover:text-[#6b3a1f] transition-colors relative py-1 flex items-center gap-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#c9833a] hover:after:w-full after:transition-all after:duration-200 cursor-pointer"
+          >
+            <span>Leaderboard</span>
+          </button>
+
+          <button
+            type="button"
             onClick={() => scrollTo('weekly-competition')}
             className="hover:text-[#6b3a1f] transition-colors relative py-1 after:content-[''] after:absolute after:bottom-0 after:left-0 after:w-0 after:h-[1.5px] after:bg-[#c9833a] hover:after:w-full after:transition-all after:duration-200 cursor-pointer"
           >
@@ -466,6 +474,14 @@ export const Navbar: React.FC<NavbarProps> = ({
               className="text-left py-2 hover:text-[#6b3a1f] transition-colors border-b border-[#ded7c8]/40 cursor-pointer"
             >
               Daily Quiz
+            </button>
+            <button
+              type="button"
+              onClick={() => scrollTo('quiz-leaderboard')}
+              className="text-left py-2 hover:text-[#6b3a1f] transition-colors border-b border-[#ded7c8]/40 cursor-pointer flex items-center justify-between"
+            >
+              <span>Quiz Leaderboard</span>
+              <span className="text-[10px] font-mono text-[#c9833a] font-bold">Top Palates</span>
             </button>
             <button
               type="button"

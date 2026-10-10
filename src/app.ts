@@ -5101,6 +5101,7 @@ const DEFAULT_DAILY_QUIZZES = [
     rewardType: 'STAMPS',
     rewardValue: 1,
     rewardDescription: '+1 Bonus Loyalty Stamp',
+    timeLimitSeconds: 120,
     questions: [
       {
         id: 'q1',
@@ -5141,6 +5142,159 @@ const DEFAULT_DAILY_QUIZZES = [
     ],
     createdAt: '2026-10-01T10:00:00.000Z',
     updatedAt: '2026-10-09T10:00:00.000Z',
+  },
+];
+
+const DEFAULT_QUIZ_ATTEMPTS = [
+  {
+    id: 'ATTEMPT-DEMO-01',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-01',
+    customerName: 'Yacine Mansouri',
+    customerPhone: '+213550000001',
+    answers: [0, 1, 1],
+    score: 3,
+    totalQuestions: 3,
+    isPerfectScore: true,
+    timeTakenSeconds: 38,
+    timedOut: false,
+    rewardIssued: { type: 'LOYALTY_STAMPS', stampsAwarded: 1, description: '+1 Bonus Stamp' },
+    completedAt: '2026-10-10T08:15:20.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-02',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-02',
+    customerName: 'Amina Benali',
+    customerPhone: '+213550000002',
+    answers: [0, 1, 1],
+    score: 3,
+    totalQuestions: 3,
+    isPerfectScore: true,
+    timeTakenSeconds: 46,
+    timedOut: false,
+    rewardIssued: { type: 'LOYALTY_STAMPS', stampsAwarded: 1, description: '+1 Bonus Stamp' },
+    completedAt: '2026-10-10T09:22:45.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-03',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-03',
+    customerName: 'Karim Saidi',
+    customerPhone: '+213550000003',
+    answers: [0, 1, 1],
+    score: 3,
+    totalQuestions: 3,
+    isPerfectScore: true,
+    timeTakenSeconds: 59,
+    timedOut: false,
+    rewardIssued: { type: 'LOYALTY_STAMPS', stampsAwarded: 1, description: '+1 Bonus Stamp' },
+    completedAt: '2026-10-10T10:05:10.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-04',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-04',
+    customerName: 'Lydia Touati',
+    customerPhone: '+213550000004',
+    answers: [0, 1, 0],
+    score: 2,
+    totalQuestions: 3,
+    isPerfectScore: false,
+    timeTakenSeconds: 72,
+    timedOut: false,
+    rewardIssued: null,
+    completedAt: '2026-10-10T11:40:00.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-05',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-05',
+    customerName: 'Sofiane Mokhtar',
+    customerPhone: '+213550000005',
+    answers: [0, 0, 1],
+    score: 2,
+    totalQuestions: 3,
+    isPerfectScore: false,
+    timeTakenSeconds: 88,
+    timedOut: false,
+    rewardIssued: null,
+    completedAt: '2026-10-10T12:10:15.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-06',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-06',
+    customerName: 'Maya Dahmani',
+    customerPhone: '+213550000006',
+    answers: [0, 1, 0],
+    score: 2,
+    totalQuestions: 3,
+    isPerfectScore: false,
+    timeTakenSeconds: 92,
+    timedOut: false,
+    rewardIssued: null,
+    completedAt: '2026-10-10T12:45:00.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-07',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-07',
+    customerName: 'Tariq Boukhalfa',
+    customerPhone: '+213550000007',
+    answers: [1, 1, 1],
+    score: 2,
+    totalQuestions: 3,
+    isPerfectScore: false,
+    timeTakenSeconds: 98,
+    timedOut: false,
+    rewardIssued: null,
+    completedAt: '2026-10-10T13:15:30.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-08',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-08',
+    customerName: 'Sabrina Ziani',
+    customerPhone: '+213550000008',
+    answers: [0, 0, 0],
+    score: 2,
+    totalQuestions: 3,
+    isPerfectScore: false,
+    timeTakenSeconds: 104,
+    timedOut: false,
+    rewardIssued: null,
+    completedAt: '2026-10-10T14:02:10.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-09',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-09',
+    customerName: 'Bilal Hamidi',
+    customerPhone: '+213550000009',
+    answers: [0, 0, 0],
+    score: 1,
+    totalQuestions: 3,
+    isPerfectScore: false,
+    timeTakenSeconds: 65,
+    timedOut: false,
+    rewardIssued: null,
+    completedAt: '2026-10-10T14:40:20.000Z',
+  },
+  {
+    id: 'ATTEMPT-DEMO-10',
+    quizId: 'quiz-coffee-origins-01',
+    customerId: 'CUST-DEMO-10',
+    customerName: 'Ines Brahimi',
+    customerPhone: '+213550000010',
+    answers: [1, 0, 1],
+    score: 1,
+    totalQuestions: 3,
+    isPerfectScore: false,
+    timeTakenSeconds: 82,
+    timedOut: false,
+    rewardIssued: null,
+    completedAt: '2026-10-10T15:20:00.000Z',
   },
 ];
 
@@ -5230,8 +5384,8 @@ const ensureManagementCollections = (db: ServerLoyaltyDB) => {
     extDb.dailyQuizzes = [...DEFAULT_DAILY_QUIZZES];
   }
 
-  if (!Array.isArray(extDb.quizAttempts)) {
-    extDb.quizAttempts = [];
+  if (!Array.isArray(extDb.quizAttempts) || extDb.quizAttempts.length === 0) {
+    extDb.quizAttempts = [...DEFAULT_QUIZ_ATTEMPTS];
   }
 
   if (!Array.isArray(extDb.competitions) || extDb.competitions.length === 0) {
@@ -6281,11 +6435,161 @@ app.get('/api/quiz/today', (req: Request, res: Response) => {
     success: true,
     quiz: {
       ...quiz,
+      timeLimitSeconds: Number(quiz.timeLimitSeconds) || 120,
       questions: sanitizedQuestions,
     },
     hasAttempted: Boolean(userAttempt),
     userAttempt,
     todayKey,
+  });
+});
+
+// Customer & Public GET Quiz Leaderboard (Rankings based on score and speed)
+app.get('/api/quiz/leaderboard', (req: Request, res: Response) => {
+  const db = loadDatabase();
+  const extDb = ensureManagementCollections(db);
+  const now = new Date();
+  const todayKey = getAlgiersDateKey(now);
+
+  const quizIdParam = typeof req.query.quizId === 'string' ? req.query.quizId.trim() : null;
+  const activeQuizzes = (extDb.dailyQuizzes || []).filter((q: any) => q.isActive);
+  const quiz = quizIdParam
+    ? (extDb.dailyQuizzes || []).find((q: any) => q.id === quizIdParam)
+    : activeQuizzes.find((q: any) => q.dateKey === todayKey) || activeQuizzes[0] || null;
+
+  if (!quiz) {
+    res.json({
+      success: true,
+      data: {
+        quizId: '',
+        quizTitle: 'Daily Palate Quiz',
+        dateKey: todayKey,
+        timeLimitSeconds: 120,
+        totalParticipants: 0,
+        entries: [],
+        currentUserEntry: null,
+      },
+    });
+    return;
+  }
+
+  // Get attempts for this quiz
+  const rawAttempts: any[] = (extDb.quizAttempts || []).filter((a: any) => a.quizId === quiz.id);
+
+  // If there are fewer than 10 community attempts, supplement with benchmark entries so the top 10 is populated
+  const combinedAttempts = [...rawAttempts];
+  if (combinedAttempts.length < 10) {
+    const existingCustIds = new Set(combinedAttempts.map((a) => a.customerId));
+    for (const demoAttempt of DEFAULT_QUIZ_ATTEMPTS) {
+      if (!existingCustIds.has(demoAttempt.customerId)) {
+        combinedAttempts.push({
+          ...demoAttempt,
+          quizId: quiz.id,
+          totalQuestions: quiz.questions?.length || 3,
+        });
+      }
+      if (combinedAttempts.length >= 10) break;
+    }
+  }
+
+  // Helper to sanitize name for privacy (e.g. "Yacine Mansouri" -> "Yacine M.")
+  const formatPublicName = (name: string) => {
+    const trimmed = (name || 'VENTY Connoisseur').trim();
+    const parts = trimmed.split(/\s+/);
+    if (parts.length > 1) {
+      const first = parts[0];
+      const lastInitial = parts[parts.length - 1][0]?.toUpperCase() || '';
+      return `${first} ${lastInitial}.`;
+    }
+    return trimmed || 'VENTY Connoisseur';
+  };
+
+  // Sort by score desc, timeTakenSeconds asc (faster speed first), completedAt asc
+  const sortedAttempts = [...combinedAttempts].sort((a, b) => {
+    const scoreDiff = (Number(b.score) || 0) - (Number(a.score) || 0);
+    if (scoreDiff !== 0) return scoreDiff;
+
+    const timeA = typeof a.timeTakenSeconds === 'number' && a.timeTakenSeconds > 0 ? a.timeTakenSeconds : 120;
+    const timeB = typeof b.timeTakenSeconds === 'number' && b.timeTakenSeconds > 0 ? b.timeTakenSeconds : 120;
+    const timeDiff = timeA - timeB;
+    if (timeDiff !== 0) return timeDiff;
+
+    return new Date(a.completedAt || 0).getTime() - new Date(b.completedAt || 0).getTime();
+  });
+
+  const currentCustomerId = req.user?.customerId;
+  let currentUserEntry: any = null;
+
+  // Pull top 10 scores (configurable via query param, defaulting to 10)
+  const limit = Math.min(50, Math.max(1, Number(req.query.limit) || 10));
+  const entries = sortedAttempts.slice(0, limit).map((attempt, index) => {
+    const rank = index + 1;
+    const timeSec = typeof attempt.timeTakenSeconds === 'number' && attempt.timeTakenSeconds > 0 ? attempt.timeTakenSeconds : 120;
+    const m = Math.floor(timeSec / 60);
+    const s = timeSec % 60;
+    const speedFormatted = m > 0 ? `${m}m ${s}s` : `${s}s`;
+    const totalQ = Number(attempt.totalQuestions) || quiz.questions?.length || 3;
+    const scoreNum = Number(attempt.score) || 0;
+
+    const entry = {
+      rank,
+      customerId: attempt.customerId,
+      customerDisplayName: formatPublicName(attempt.customerName),
+      score: scoreNum,
+      totalQuestions: totalQ,
+      accuracyPercent: Math.round((scoreNum / totalQ) * 100),
+      timeTakenSeconds: timeSec,
+      speedFormatted,
+      isPerfectScore: Boolean(attempt.isPerfectScore),
+      completedAt: attempt.completedAt,
+      isCurrentUser: currentCustomerId ? attempt.customerId === currentCustomerId : false,
+    };
+
+    if (currentCustomerId && attempt.customerId === currentCustomerId) {
+      currentUserEntry = entry;
+    }
+
+    return entry;
+  });
+
+  // If current customer has an attempt but ranked beyond top 15, provide their entry
+  if (currentCustomerId && !currentUserEntry) {
+    const userIndex = sortedAttempts.findIndex((a) => a.customerId === currentCustomerId);
+    if (userIndex !== -1) {
+      const attempt = sortedAttempts[userIndex];
+      const timeSec = typeof attempt.timeTakenSeconds === 'number' && attempt.timeTakenSeconds > 0 ? attempt.timeTakenSeconds : 120;
+      const m = Math.floor(timeSec / 60);
+      const s = timeSec % 60;
+      const totalQ = Number(attempt.totalQuestions) || quiz.questions?.length || 3;
+      const scoreNum = Number(attempt.score) || 0;
+
+      currentUserEntry = {
+        rank: userIndex + 1,
+        customerId: attempt.customerId,
+        customerDisplayName: formatPublicName(attempt.customerName),
+        score: scoreNum,
+        totalQuestions: totalQ,
+        accuracyPercent: Math.round((scoreNum / totalQ) * 100),
+        timeTakenSeconds: timeSec,
+        speedFormatted: m > 0 ? `${m}m ${s}s` : `${s}s`,
+        isPerfectScore: Boolean(attempt.isPerfectScore),
+        completedAt: attempt.completedAt,
+        isCurrentUser: true,
+      };
+    }
+  }
+
+  res.json({
+    success: true,
+    data: {
+      quizId: quiz.id,
+      quizTitle: quiz.title,
+      dateKey: quiz.dateKey,
+      timeLimitSeconds: Number(quiz.timeLimitSeconds) || 120,
+      totalParticipants: sortedAttempts.length,
+      entries,
+      currentUserEntry,
+    },
   });
 });
 
@@ -6300,7 +6604,7 @@ app.post('/api/quiz/submit', requireRole(['CUSTOMER']), async (req: Request, res
     return;
   }
 
-  const { quizId, answers } = req.body || {};
+  const { quizId, answers, timeTakenSeconds, timedOut } = req.body || {};
   if (!quizId || !Array.isArray(answers)) {
     res.status(400).json({ error: 'Bad Request', message: 'quizId and answers array are required.' });
     return;
@@ -6365,7 +6669,7 @@ app.post('/api/quiz/submit', requireRole(['CUSTOMER']), async (req: Request, res
       id: txId,
       customerId,
       customerName,
-      type: 'ADMIN_ADJUSTMENT',
+      type: 'ADMIN_ADJUSTMENT' as const,
       stampsDelta: stampsToAdd,
       source: 'SYSTEM' as const,
       status: 'CONFIRMED' as const,
@@ -6422,6 +6726,8 @@ app.post('/api/quiz/submit', requireRole(['CUSTOMER']), async (req: Request, res
     score,
     totalQuestions,
     isPerfectScore,
+    timeTakenSeconds: typeof timeTakenSeconds === 'number' ? Math.max(0, Math.round(timeTakenSeconds)) : undefined,
+    timedOut: Boolean(timedOut),
     rewardIssued,
     completedAt: new Date().toISOString(),
   };
@@ -6438,6 +6744,8 @@ app.post('/api/quiz/submit', requireRole(['CUSTOMER']), async (req: Request, res
     score,
     totalQuestions,
     isPerfectScore,
+    timeTakenSeconds: attemptRecord.timeTakenSeconds,
+    timedOut: attemptRecord.timedOut,
     rewardIssued: rewardIssued?.type || 'NONE',
   });
 
@@ -6477,6 +6785,7 @@ app.post('/api/management/quizzes', adminLimiter, requireRole(['ADMIN']), (req: 
     rewardType,
     rewardValue,
     rewardDescription,
+    timeLimitSeconds,
     questions,
   } = req.body || {};
 
@@ -6496,6 +6805,7 @@ app.post('/api/management/quizzes', adminLimiter, requireRole(['ADMIN']), (req: 
     rewardType: rewardType || 'STAMPS',
     rewardValue: Number(rewardValue) || 1,
     rewardDescription: rewardDescription || '+1 Bonus Loyalty Stamp',
+    timeLimitSeconds: Number(timeLimitSeconds) > 0 ? Number(timeLimitSeconds) : 120,
     questions: questions.map((q: any, i: number) => ({
       id: q.id || `q-${i + 1}`,
       question: String(q.question || '').trim(),
@@ -6549,6 +6859,7 @@ app.put('/api/management/quizzes/:id', adminLimiter, requireRole(['ADMIN']), (re
     rewardType,
     rewardValue,
     rewardDescription,
+    timeLimitSeconds,
     questions,
   } = req.body || {};
 
@@ -6563,6 +6874,7 @@ app.put('/api/management/quizzes/:id', adminLimiter, requireRole(['ADMIN']), (re
     rewardType: rewardType || existing.rewardType,
     rewardValue: rewardValue !== undefined ? Number(rewardValue) : existing.rewardValue,
     rewardDescription: rewardDescription !== undefined ? rewardDescription : existing.rewardDescription,
+    timeLimitSeconds: timeLimitSeconds !== undefined ? (Number(timeLimitSeconds) > 0 ? Number(timeLimitSeconds) : 120) : (existing.timeLimitSeconds || 120),
     questions: Array.isArray(questions)
       ? questions.map((q: any, i: number) => ({
           id: q.id || `q-${i + 1}`,

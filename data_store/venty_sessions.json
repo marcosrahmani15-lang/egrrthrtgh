@@ -451,5 +451,26 @@
     "sessionId": "040e7e8c5e9dda6f",
     "sessionHash": "040e7e8c5e9dda6f0a197f3659668e9c2d9f735c2450f31720d5a4bf46beba9c",
     "expiresAt": 1794133828567
+  },
+  "db6769674f900ae14ae229f7fc50c8b06f152d769bc1a99ac15f8c613f31deff": {
+    "role": "CUSTOMER",
+    "customerId": "VENTY-3358",
+    "sessionId": "db6769674f900ae1",
+    "sessionHash": "db6769674f900ae14ae229f7fc50c8b06f152d769bc1a99ac15f8c613f31deff",
+    "expiresAt": 1794214235153
+  },
+  "6bde115eb1a3b06f3ccc263efd74107b7bdcc143601ad533ea9e5513f153aad6": {
+    "role": "CUSTOMER",
+    "customerId": "VENTY-3358",
+    "sessionId": "6bde115eb1a3b06f",
+    "sessionHash": "6bde115eb1a3b06f3ccc263efd74107b7bdcc143601ad533ea9e5513f153aad6",
+    "expiresAt": 1794214241986
+  },
+  "541d35d893816a01aae14172460e58ea748cc84024457af3b9446b937b8e1c81": {
+    "role": "CUSTOMER",
+    "customerId": "VENTY-8178",
+    "sessionId": "541d35d893816a01",
+    "sessionHash": "541d35d893816a01aae14172460e58ea748cc84024457af3b9446b937b8e1c81",
+    "expiresAt": 1794214248455
   }
 }
